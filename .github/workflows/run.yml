@@ -20,7 +20,11 @@ jobs:
         with:
           agent: infodb
           prompt: ${{ github.event.inputs.prompt || 'do the job' }}
-          silent: true
           vm0-token: ${{ secrets.VM0_TOKEN }}
           secrets: |
             CLAUDE_CODE_OAUTH_TOKEN=${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+            GH_TOKEN=${{ secrets.GH_TOKEN }}
+            FIRECRAWL_API_KEY=${{ secrets.FIRECRAWL_API_KEY }}
+            CF_ACCESS_CLIENT_ID=${{ secrets.CF_ACCESS_CLIENT_ID }}
+            CF_ACCESS_CLIENT_SECRET=${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+            CDP_WSS=${{ secrets.CDP_WSS }}
