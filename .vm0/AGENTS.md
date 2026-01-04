@@ -16,7 +16,7 @@ Use firecrawl instead of webfetch
 
 ### Task 2, complete this part in a subagent, at the end do not report all information, just report the local file paths
 
-* Use the hackernews skill to download the top 30 news items to the hackernews directory, including some comments
+* Use the hackernews skill to download the top 10 news items to the hackernews directory, including some comments
 * For the GitHub repositories and products mentioned in these news, do a secondary search and capture some information to local, also in the hackernews directory, learn as much as possible about these contents
 
 ### Task 3, complete this part in a subagent, at the end do not report all information, just report the local file paths
