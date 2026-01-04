@@ -1,0 +1,26 @@
+name: Run Agent
+
+on:
+  # Uncomment to enable scheduled runs:
+  # schedule:
+  #   - cron: '0 1 * * *'  # Daily at 9:00 AM UTC+8
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: 'Prompt for the agent'
+        required: false
+        default: 'do the job'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Agent
+        uses: vm0-ai/run-action@v1
+        with:
+          agent: infodb
+          prompt: ${{ github.event.inputs.prompt || 'do the job' }}
+          silent: true
+          vm0-token: ${{ secrets.VM0_TOKEN }}
+          secrets: |
+            CLAUDE_CODE_OAUTH_TOKEN=${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

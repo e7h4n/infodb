@@ -1,0 +1,17 @@
+version: "1.0"
+
+agents:
+  infodb:
+    provider: claude-code
+    image: e7h4n/infodb
+    instructions: AGENTS.md
+    skills:
+      - https://github.com/vm0-ai/vm0-skills/tree/main/github
+      - https://github.com/vm0-ai/vm0-skills/tree/main/firecrawl
+      - https://github.com/vm0-ai/vm0-skills/tree/main/hackernews
+      - https://github.com/vm0-ai/browser-skills/tree/main/rednote
+    environment:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+      CDP_WSS: ${{ secrets.CDP_WSS }}
